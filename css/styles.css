@@ -229,6 +229,7 @@ p {
     border-radius: 10px;
     background-color: var(--footer);
     box-shadow: var(--box-shadow);
+    text-align: center;
 }
 
 /*================== SUBMITTED =================*/
