@@ -1,0 +1,39 @@
+---
+layout: default
+title: About
+---
+
+{% include nav.html %}
+
+<script>
+    setActiveNavLink("about");
+</script>
+
+<h1>Who is Nacho Libre?</h1>
+<main class="flex-container flex-wrap r-gap-50 c-gap-20 p-20">
+    <div class="center-container flex-wrap-item">
+        <img
+            id="nacho-about-img"
+            src="img/about-photo.jpg"
+            alt="Nacho at Monastery"
+        />
+    </div>
+    <div class="flex-wrap-item">
+        <h2>Bio</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            beatae repudiandae officia maiores libero itaque similique facere
+            facilis, molestiae, deserunt qui veniam neque error animi optio
+            accusantium aperiam sit laboriosam?
+        </p>
+        <h2>Stats</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nulla
+            aperiam voluptate quia voluptates totam tenetur cumque quod iusto,
+            perspiciatis, dolor eum rem atque cupiditate illo reprehenderit
+            officiis quaerat beatae!
+        </p>
+    </div>
+</main>
+
+{% include footer.html %}

@@ -1,22 +1,371 @@
-@import url("https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap");
+/*================== SITE WIDE =================*/
+
+:root {
+    --nacho-red: #b70b02;
+    --nacho-blue: rgb(131, 203, 218);
+    --divider: rgba(148, 148, 148, 0.5);
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --alpha: rgba(0, 0, 0, 0.2);
+    --footer: rgba(191, 191, 191, 0.66);
+
+    --miriam-libre: "Miriam Libre", sans-serif;
+    --helvetica: Helvetica, sans-serif;
+}
 
 body {
-    background-color: #83cbda;
-    margin: 20px;
+    margin: 0;
+    background-color: var(--nacho-blue);
+    /* The formatting below is to achieve a pushed footer effect */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.home-col img {
-    width: 100%;
-    max-height: 90vh;
+a {
+    text-decoration: none;
+    color: inherit;
 }
+
+nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--nacho-red);
+    font-family: var(--miriam-libre);
+    box-shadow: var(--box-shadow);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--miriam-libre);
+}
+
+h1 {
+    /* Large top margin for the nav bar */
+    margin: 100px 0 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--footer);
+    margin-top: auto;
+}
+
+p {
+    font-family: var(--helvetica);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 2px 15px;
+}
+
+.nav-link img {
+    max-height: 100%;
+    /* fixes a flexbox width bug in Firefox: https://stackoverflow.com/questions/56258442/incorrect-size-of-flex-child-with-an-image */
+    max-width: 163.22px;
+}
+
+.nav-link-active {
+    background-color: var(--alpha);
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: var(--alpha);
+    color: white;
+}
+
+@media only screen and (max-width: 560px) {
+    nav {
+        display: block;
+        height: auto;
+        position: unset;
+    }
+
+    .nav-link {
+        justify-content: center;
+        padding: 10px 15px;
+    }
+
+    h1 {
+        margin: 40px 0 20px;
+        text-align: center;
+    }
+}
+
+/*================== HOME =================*/
 
 .home-nav-item {
+    width: 125px;
     padding: 50px 0;
-    width: 100%;
+    font-family: var(--miriam-libre);
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+}
+
+.home-nav-item:hover {
+    background-color: var(--nacho-red);
+    color: white;
+    transition-duration: 0.66s;
 }
 
 #home-container {
+    margin: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+}
+
+#home-container img {
+    max-height: 90vh;
+}
+
+@media only screen and (max-width: 820px) {
+    #home-container {
+        max-width: unset;
+        display: block;
+    }
+
+    #home-container img {
+        max-height: 70vh;
+    }
+
+    .home-nav-block {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .home-nav-item {
+        padding: 25px 0;
+    }
+}
+
+/*================== ABOUT =================*/
+
+#nacho-about-img {
+    max-width: unset;
+    width: 500px;
+}
+
+@media only screen and (max-width: 530px) {
+    #nacho-about-img {
+        max-width: unset;
+        width: 320px;
+    }
+}
+
+/*================== HIGHLIGHTS =================*/
+
+.highlights-iframe {
+    width: 560px;
+    height: 340px;
+}
+
+@media only screen and (max-width: 600px) {
+    .highlights-iframe {
+        width: 420px;
+        height: 255px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .highlights-iframe {
+        width: 300px;
+        height: 190px;
+    }
+}
+
+/*================== CONTACT =================*/
+
+#contact-form {
+    width: 600px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="date"],
+#contact-form select,
+#contact-form textarea,
+#contact-form option {
+    background-color: var(--footer);
+    outline: none;
+    border: 2px solid var(--divider);
+    border-radius: 5px;
+    font-family: var(--helvetica);
+}
+
+#contact-form textarea {
+    height: 300px;
+    width: 100%;
+    outline: none;
+}
+
+#contact-form label {
+    font-family: var(--helvetica);
+}
+
+.contact-flex-field {
+    flex-grow: 1;
+}
+
+/*================== SCHEDULE =================*/
+
+#schedule-tickets-container {
+    width: 400px;
+    border: 2px solid var(--nacho-red);
+    padding: 15px;
+    border-radius: 10px;
+    background-color: var(--footer);
+    box-shadow: var(--box-shadow);
+}
+
+/*================== SUBMITTED =================*/
+
+#submitted-header {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/*================== GLOBAL UTILITY CLASSES =================*/
+
+.flex-container {
+    display: flex;
+}
+
+.flex-columns-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.r-gap-5 {
+    row-gap: 5px;
+}
+
+.c-gap-5 {
+    column-gap: 5px;
+}
+
+.r-gap-20 {
+    row-gap: 20px;
+}
+
+.c-gap-20 {
+    column-gap: 20px;
+}
+
+.r-gap-50 {
+    row-gap: 50px;
+}
+
+.c-gap-50 {
+    column-gap: 50px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-item {
+    flex: 1 1 160px;
+}
+
+.button {
+    padding: 5px 10px;
+    font-family: var(--miriam-libre);
+    background-color: var(--footer);
+    border: 2px solid var(--divider);
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
+
+.button-border-red {
+    border: 2px solid var(--nacho-red);
+}
+
+.button-border-blue {
+    border: 2px solid var(--nacho-blue);
+}
+
+.button-hover-red:hover {
+    transition-duration: 0.33s;
+    color: white;
+    background-color: var(--nacho-red);
+}
+
+.button-hover-blue:hover {
+    transition-duration: 0.33s;
+    background-color: var(--nacho-blue);
+}
+
+.blue {
+    background-color: var(--nacho-blue);
+}
+
+.red {
+    background-color: var(--nacho-red);
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.m-5 {
+    margin: 5;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-5 {
+    padding: 5px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.block {
+    display: block;
+}
+
+.shadow {
+    box-shadow: var(--box-shadow);
 }

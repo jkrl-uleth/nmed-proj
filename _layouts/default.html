@@ -2,9 +2,37 @@
 <html lang="en">
     <head>
         <title>{{ page.title }}</title>
+        <!-- Remove the FOUC -->
+        <style>
+            html {
+                visibility: hidden;
+            }
+        </style>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=block"
+            rel="stylesheet"
+        />
+        <!-- Custom Stylesheet -->
         <link rel="stylesheet" href="css/styles.css" />
+        <script>
+            function setActiveNavLink(id) {
+                document
+                    .getElementById("nav-" + id)
+                    .classList.add("nav-link-active");
+            }
+        </script>
     </head>
-    {{ content }}
+    <body>
+        {{ content }}
+    </body>
+    <!-- Remove the FOUC -->
+    <script>
+        document.getElementsByTagName("html")[0].style.visibility = "visible";
+    </script>
 </html>

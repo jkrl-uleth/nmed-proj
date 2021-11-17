@@ -1,0 +1,68 @@
+---
+layout: default
+title: Contact
+---
+
+{% include nav.html %}
+
+<script>
+    setActiveNavLink("contact");
+</script>
+
+<h1>Contact Us</h1>
+<main class="center-container">
+    <form id="contact-form" action="submitted.html">
+        <div class="flex-container flex-wrap p-20 r-gap-5 c-gap-5">
+            <div class="flex-container contact-flex-field c-gap-5">
+                <label for="contact-name">Name: </label>
+                <input
+                    id="contact-name"
+                    class="contact-flex-field"
+                    type="text"
+                    name="contact-name"
+                />
+            </div>
+            <div class="flex-container contact-flex-field c-gap-5">
+                <label for="contact-sender-email">Email: </label>
+                <input
+                    id="contact-sender-email"
+                    class="contact-flex-field"
+                    type="text"
+                    name="contact-sender-email"
+                />
+            </div>
+            <div class="flex-container contact-flex-field c-gap-5">
+                <label for="contact-dob">Birth Date: </label>
+                <input
+                    id="contact-dob"
+                    class="contact-flex-field"
+                    type="date"
+                    name="contact-dob"
+                />
+            </div>
+            <div class="flex-container contact-flex-field c-gap-5">
+                <label for="contact-subject">Subject: </label>
+                <select
+                    name="contact-subject"
+                    id="contact-subject"
+                    class="contact-flex-field"
+                >
+                    <option value="booking">Booking</option>
+                    <option value="fanMail">Fan Mail</option>
+                    <option value="matchInfo">Match Info</option>
+                </select>
+            </div>
+            <textarea
+                id="contact-message"
+                placeholder="Drop us a line!"
+            ></textarea>
+            <input
+                class="button button-hover-red"
+                type="submit"
+                value="Submit"
+            />
+        </div>
+    </form>
+</main>
+
+{% include footer.html %}
