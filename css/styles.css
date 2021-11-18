@@ -62,7 +62,9 @@ footer {
     align-items: center;
 }
 
-p {
+p,
+ul,
+li {
     font-family: var(--helvetica);
 }
 
@@ -192,6 +194,10 @@ p {
     height: 340px;
 }
 
+.highlights-paragraph {
+    min-height: 65px;
+}
+
 @media only screen and (max-width: 600px) {
     .highlights-iframe {
         width: 420px;
@@ -271,6 +277,7 @@ p {
     width: 800px;
     border: 2px solid var(--nacho-red);
     padding: 5px;
+    margin-bottom: 20px;
     border-collapse: collapse;
     background-color: var(--footer);
 }
@@ -282,6 +289,12 @@ p {
     height: 80vh;
     justify-content: center;
     align-items: center;
+}
+
+/*================== CITATIONS =================*/
+
+#citations-list {
+    width: 600px;
 }
 
 /*================== GLOBAL UTILITY CLASSES =================*/
