@@ -59,6 +59,7 @@ h1 {
 footer {
     background-color: var(--footer);
     margin-top: auto;
+    align-items: center;
 }
 
 p {
@@ -85,6 +86,19 @@ p {
 .nav-link:hover {
     background-color: var(--alpha);
     color: white;
+}
+
+.footer-icons {
+    height: 25px;
+}
+
+#footer-citations {
+    font-family: var(--helvetica);
+}
+
+#footer-citations:hover {
+    text-decoration: underline;
+    color: var(--nacho-red);
 }
 
 @media only screen and (max-width: 560px) {
@@ -156,19 +170,22 @@ p {
 
 /*================== ABOUT =================*/
 
-#nacho-about-img {
-    max-width: unset;
-    width: 500px;
+#about-container {
+    max-width: 1440px;
 }
 
-@media only screen and (max-width: 530px) {
-    #nacho-about-img {
-        max-width: unset;
-        width: 320px;
-    }
+#nacho-about-img {
+    max-width: unset;
+    width: 100%;
+    min-width: 300px;
+    align-self: center;
 }
 
 /*================== HIGHLIGHTS =================*/
+
+#highlights-container {
+    max-width: 1440px;
+}
 
 .highlights-iframe {
     width: 560px;
@@ -191,7 +208,7 @@ p {
 /*================== CONTACT =================*/
 
 #contact-form {
-    width: 600px;
+    width: 800px;
 }
 
 #contact-form input[type="text"],
@@ -217,6 +234,7 @@ p {
 }
 
 .contact-flex-field {
+    min-width: 200px;
     flex-grow: 1;
 }
 
@@ -230,6 +248,31 @@ p {
     background-color: var(--footer);
     box-shadow: var(--box-shadow);
     text-align: center;
+}
+
+#schedule-season-results-header {
+    margin: 100px 0 20px;
+}
+
+#schedule-table th {
+    border: 2px solid var(--nacho-red);
+    padding: 5px;
+    font-family: var(--miriam-libre);
+}
+
+#schedule-table td {
+    border: 2px solid var(--nacho-red);
+    padding: 5px;
+    font-family: var(--helvetica);
+    text-align: center;
+}
+
+#schedule-table {
+    width: 800px;
+    border: 2px solid var(--nacho-red);
+    padding: 5px;
+    border-collapse: collapse;
+    background-color: var(--footer);
 }
 
 /*================== SUBMITTED =================*/
@@ -287,7 +330,7 @@ p {
 }
 
 .flex-wrap-item {
-    flex: 1 1 160px;
+    flex: 1 1 280px;
 }
 
 .button {
@@ -319,6 +362,10 @@ p {
     background-color: var(--nacho-blue);
 }
 
+.border {
+    border: 2px solid var(--divider);
+}
+
 .blue {
     background-color: var(--nacho-blue);
 }
@@ -335,8 +382,12 @@ p {
     margin: 20px;
 }
 
+.m-50 {
+    margin: 50px;
+}
+
 .m-5 {
-    margin: 5;
+    margin: 5px;
 }
 
 .m-auto {
@@ -353,6 +404,10 @@ p {
 
 .p-20 {
     padding: 20px;
+}
+
+.p-50 {
+    padding: 50px;
 }
 
 .w-100 {
